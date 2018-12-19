@@ -1,2 +1,4 @@
 #ignore data files update
 data/
+.ipynb_checkpoints/
+generators/.ipynb_checkpoints/
