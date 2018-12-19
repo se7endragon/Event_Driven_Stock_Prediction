@@ -3,7 +3,7 @@ import os
 from collections import defaultdict
 #1.News Data dictionary generation
 news_dict = defaultdict(list)
-for root, subFolders, files in os.walk("news"):
+for root, subFolders, files in os.walk("../data/news"):
     if len(root.split("/")) != 3: #ignore outer dir in root's perspective
         continue
     date = root.split("/")[-1] #assign date accordingly
@@ -38,5 +38,5 @@ for root, subFolders, files in os.walk("news"):
                         news_dict[date].append(title.lower())
                         break
 
-with open('news_dict.pickle', 'wb') as handle:
+with open('../data/news_dict.pickle', 'wb') as handle:
     pickle.dump(news_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)

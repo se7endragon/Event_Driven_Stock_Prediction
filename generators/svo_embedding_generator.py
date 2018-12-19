@@ -2,7 +2,7 @@ import numpy as np
 import pickle
 
 #Load SVO Dictionary
-with open('svo_dict.pickle', 'rb') as handle:
+with open('../data/svo_dict.pickle', 'rb') as handle:
     svo_dict = pickle.load(handle)
 
 #Dictionary for pre-trained word embedding Glove
@@ -44,5 +44,5 @@ for k,v in svo_dict.items():
             day_svo.append(svo_embed)
     svo_dict_embed[k]= day_svo
 
-with open('svo_dict_embed.pickle','wb') as handle:
+with open('../data/svo_dict_embed.pickle','wb') as handle:
     pickle.dump(svo_dict_embed,handle,protocol=pickle.HIGHEST_PROTOCOL)

@@ -4,7 +4,7 @@ import pickle
 from collections import defaultdict
 
 #load news dictionary for svo extraction
-with open('news_dict.pickle', 'rb') as handle:
+with open('../data/news_dict.pickle', 'rb') as handle:
     news_dict = pickle.load(handle)
 
 #English Language Model from spacy
@@ -35,5 +35,5 @@ for k,v in svo_dict.items(): #for each day
     svo_dict_str[k] = dayList
 
 #save dictionary for later use as svo_dict.pickle
-with open('svo_dict.pickle', 'wb') as handle:
+with open('../data/svo_dict.pickle', 'wb') as handle:
     pickle.dump(svo_dict_str, handle, protocol=pickle.HIGHEST_PROTOCOL)
